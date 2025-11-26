@@ -1,30 +1,78 @@
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('../fonts/RobotoMono-Thin.ttf');
-  }
-  
-  * {
-    font-family: 'RobotoMono', monospace;
-  }
+  font-family: 'RobotoMono';
+  src: url('../fonts/RobotoMono-Thin.ttf');
+}
+
+* {
+  font-family: 'RobotoMono', monospace;
+}
 
 body {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    
-    color: #FFF;
-    background: linear-gradient(to right, rgb(19, 106, 138), rgb(38, 120, 113));
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: #FFF;
+  background: linear-gradient(to right, rgb(19, 106, 138), rgb(38, 120, 113));
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+#app {
+  max-width: 600px;
+  width: 100%;
 }
 
 input {
-    font-size: 2em;
-    margin-bottom: 30px;
+  width: 100%;            
+  max-width: 400px;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  border: none;
 }
 
 .output {
-    width: 500px;
-    height: 300px;
-    border: 1px solid #222;
-    padding: 30px 15px;
-    background-color: #0006;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;         
+  border: 1px solid #222;
+  padding: 20px;
+  background-color: #0006;
+  border-radius: 10px;
+}
+
+.output img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;       
+}
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  input {
+    font-size: 1.2em;
+  }
+
+  .output {
+    padding: 10px;
+    max-width: 280px;
+  }
+
+  .output img {
+    max-width: 240px;
+  }
+
 }
