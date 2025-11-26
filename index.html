@@ -6,14 +6,37 @@
     <script src="js/vue.min.js"></script>
     <script src="js/qrious.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>QRCode Generator</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>QRCode Generator</title>
 </head>
 
 <body>
-
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <div>
+            <input type="text" size="25"
+                placeholder="Type to generate..."
+                v-model="text">
+        </div>
+        <div class="output">
+            <img :src="newQRcode" alt="QRCode" v-if="text">
+        </div>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                title: 'QRCode Generator',
+                text: 'https://portfolio-pitergomes.vercel.app/',
+                qrcode: new QRious({ size: 300 })
+            },
+            computed: {
+                newQRcode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            }
+        })
     </script>
 </body>
 

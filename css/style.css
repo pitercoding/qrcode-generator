@@ -22,6 +22,8 @@ input {
 }
 
 .output {
+    width: 500px;
+    height: 300px;
     border: 1px solid #222;
     padding: 30px 15px;
     background-color: #0006;
